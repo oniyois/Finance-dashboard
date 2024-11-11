@@ -1,4 +1,5 @@
 import { useState } from "react";
+ import logo from './assets/logo.svg';
 // import './App.css'
 
 function SideBarLinks() {
@@ -10,6 +11,7 @@ function SideBarLinks() {
     "Withdraw",
     "Deposit",
     "Security",
+    "Contact Support"
   ];
 
   let navLinks = links.map((link, index) => {
@@ -31,7 +33,7 @@ function SideBar() {
     <>
       <aside className="side-bar">
         <div className="sidebar-title">
-          {/* Add ImAGE */}
+          <img src={logo} loading="lazy" />
           <h2>Connect</h2>
         </div>
         <SideBarLinks />
