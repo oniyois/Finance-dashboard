@@ -1,4 +1,6 @@
 import { useState } from "react";
+ import logo from './assets/logo.svg';
+ 
 // import './App.css'
 
 function SideBarLinks() {
@@ -10,6 +12,7 @@ function SideBarLinks() {
     "Withdraw",
     "Deposit",
     "Security",
+    "Contact Support"
   ];
 
   let navLinks = links.map((link, index) => {
@@ -31,7 +34,7 @@ function SideBar() {
     <>
       <aside className="side-bar">
         <div className="sidebar-title">
-          {/* Add ImAGE */}
+          <img src={logo} loading="lazy" />
           <h2>Connect</h2>
         </div>
         <SideBarLinks />
@@ -40,10 +43,59 @@ function SideBar() {
   );
 }
 
+function TopContainer(){
+  return(
+    <>
+      
+        <div className="top-container">
+          <div className="search-input">
+            <input type="search" placeholder="search"/>
+            <div className="date-input">
+          <input type="date" />
+        </div>
+        </div>
+        </div>
+      
+    </>
+
+  );
+}
+
+function PriceSection(){
+  return(
+    <>
+      
+    </>
+  );
+}
+
+function FirstContainer(){
+
+}
+
+
+function MainContainer(){
+
+}
+
+function MainContent(){
+  return(
+    <>
+    <div className="main-content">
+    <TopContainer/>
+
+    </div>
+      
+    </>
+  );
+
+}
+
 function App() {
   return (
     <>
       <SideBar />
+      <MainContent/>
     </>
   );
 }
