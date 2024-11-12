@@ -43,10 +43,59 @@ function SideBar() {
   );
 }
 
+function TopContainer(){
+  return(
+    <>
+      
+        <div className="top-container">
+          <div className="search-input">
+            <input type="search" placeholder="search"/>
+            <div className="date-input">
+          <input type="date" />
+        </div>
+        </div>
+        </div>
+      
+    </>
+
+  );
+}
+
+function PriceSection(){
+  return(
+    <>
+      
+    </>
+  );
+}
+
+function FirstContainer(){
+
+}
+
+
+function MainContainer(){
+
+}
+
+function MainContent(){
+  return(
+    <>
+    <div className="main-content">
+    <TopContainer/>
+
+    </div>
+      
+    </>
+  );
+
+}
+
 function App() {
   return (
     <>
       <SideBar />
+      <MainContent/>
     </>
   );
 }
