@@ -50,9 +50,16 @@ function TopContainer(){
         <div className="top-container">
           <div className="search-input">
             <input type="search" placeholder="search"/>
-            <div className="date-input">
+            
+        </div>
+        <div className="date-input">
           <input type="date" />
         </div>
+        <div class="current-user">
+          <p>
+            John Camp
+            <img src="/assets/johnCamp_img.svg" />
+          </p>
         </div>
         </div>
       
@@ -72,6 +79,8 @@ function PriceSection(){
 function FirstContainer(){
 
 }
+
+
 
 
 function MainContainer(){
