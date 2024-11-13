@@ -159,7 +159,7 @@ input[type="date"] {
 .select-option {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 select {
   color: var(--light);
