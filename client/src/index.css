@@ -195,7 +195,7 @@ select {
 .transaction-footer {
   display: flex;
   flex-direction: row;
-  margin: 0 24px;
+  margin: 0 8px;
   gap: 8px;
 }
 .transaction-footer-inner {

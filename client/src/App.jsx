@@ -25,6 +25,16 @@ import priceSectionGreenLine from "./assets/dashboard/price-section/dashboard_pr
 
 import priceSectionRedLine from "./assets/dashboard/price-section/dashboard_pricesection_red_line.svg"
 
+import UserImg from "./assets/dashboard/user-section/user_section_profile_img.svg"
+
+import MapImage from "./assets/dashboard/map-img/map_img.svg"
+
+import StatsGreenGraph from "./assets/dashboard/stats-imgs/stats_green_graphline.svg"
+
+import StatsRedGraph from "./assets/dashboard/stats-imgs/stats_red_graphline.svg"
+
+import StatsYellowGraph from "./assets/dashboard/stats-imgs/stats_yellow_graphline.svg"
+
 function SideBarLinks() {
   const links = [
     { Dashboard: dashboardIcon },
@@ -124,6 +134,10 @@ function PriceSection() {
     </div>
     {priceSectionInner}
   </div>
+
+  
+
+  
   
 
   </>
@@ -132,7 +146,41 @@ function PriceSection() {
 
 function FirstContainer() {
   return (
-    <PriceSection/>
+   <>
+   <div className="first-container">
+   <PriceSection/>
+   <div className="stats">
+    <div className="stats-1">
+      <div className="div">
+        <p>NP 250 04</p>
+        <h4>$45682.01</h4>
+      </div>
+      <img src={StatsGreenGraph}/>
+      
+    </div>
+
+    <div className="stats-2">
+      <div className="div">
+        <p>NP 250 04</p>
+        <h4>$45682.01</h4>
+      </div>
+      <img src={StatsRedGraph}/>
+      
+    </div>
+    <div className="stats-3">
+      <div className="div">
+        <p>NP 250 04</p>
+        <h4>$45682.01</h4>
+      </div>
+      <img src={StatsYellowGraph}/>
+      
+    </div>
+
+  </div>
+   </div>
+    
+   
+   </>
   );
 
 }
@@ -140,8 +188,8 @@ function FirstContainer() {
 function TransactionFooters() {
   const transactionFooter = [
     { "ATM CardS": transactionFooterBlueDot },
-    { "Remittance": transactionFooterBlueDot },
-    { "OnlineTransaction": transactionFooterBlueDot },
+    { "Remittance": transactionFooterGreenDot },
+    { "OnlineTransaction": transactionFooterRedDot },
   ];
 
   let transactionFooterInner = transactionFooter.map((footer, index) => {
@@ -152,7 +200,20 @@ function TransactionFooters() {
       </div>
     );
   });
-  return <div className="transaction-footer">{transactionFooterInner}</div>;
+  return(
+    <>
+    
+    <div className="transaction-summary">
+    <div className="transaction-footer">
+   
+   {transactionFooterInner}
+   
+    </div>;
+
+    </div>
+     
+     </>
+  );
 }
 
 function SecondContainer() {
@@ -176,8 +237,11 @@ function SecondContainer() {
   return (
     <div className="second-container">
       <div className="transaction-summary">
-        <div className="transaction-summary-inner">{transactionSummaries}</div>
+        <div className="transaction-summary-inner">
+        {transactionSummaries}
+        </div>
         <TransactionFooters />
+        
       </div>
       <div className="active-cards">
         <div className="activecards-title">
@@ -212,11 +276,79 @@ function SecondContainer() {
   );
 }
 
+
+function ThirdContainer(){
+  return(
+    <>
+    <div className="third-container">
+      <div className="user-section">
+      <h2 className="dark-color">Users</h2>
+      <div className="user-select">
+              <select>
+                <option>All time</option>
+              </select>
+              <select>
+                <option>Nepal</option>
+              </select>
+            </div>
+            <div className="user-inner1">
+                <img src={UserImg}/>
+                <div class="user-inner-price">
+                  <h4>Randy Westervelt</h4>
+                  <p>$15025.10</p>
+                </div>
+              </div>
+
+              <div className="user-inner2">
+                <img src={UserImg}/>
+                <div class="user-inner-price">
+                  <h4>Randy Westervelt</h4>
+                  <p>$15025.10</p>
+                </div>
+              </div>
+
+              <div className="user-inner3">
+                <img src={UserImg}/>
+                <div class="user-inner-price">
+                  <h4>Randy Westervelt</h4>
+                  <p>$15025.10</p>
+                </div>
+              </div>
+
+              <div className="user-inner4">
+                <img src={UserImg}/>
+                <div class="user-inner-price">
+                  <h4>Randy Westervelt</h4>
+                  <p>$15025.10</p>
+                </div>
+              </div>
+
+              <div className="user-inner5">
+                <img src={UserImg}/>
+                <div class="user-inner-price">
+                  <h4>Randy Westervelt</h4>
+                  <p>$15025.10</p>
+                </div>
+              </div>
+
+      </div>
+      <div className="map-image">
+      <img src={MapImage}/>
+    </div>
+    </div>
+    
+    </>
+    
+  );
+
+}
+
 function MainContainer() {
   return (
     <div className="main-container">
     <FirstContainer/>
       <SecondContainer />
+      <ThirdContainer/>
       
     </div>
   );
