@@ -103,7 +103,9 @@ function PriceSection() {
     { "NP 250 04": priceSectionGreenLine},
     { "NP 250 05": priceSectionGreenLine},
     {"NP 250 06 ": priceSectionGreenLine},
-    {"NP 250 07": priceSectionRedLine }
+    {"NP 250 07": priceSectionRedLine },
+    {"NP 250 08": priceSectionRedLine },
+    {"NP 250 09": priceSectionRedLine }
   ];
 
   let priceSectionInner = priceSectionDetails.map((price, index) => {

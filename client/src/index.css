@@ -37,6 +37,8 @@
   color: var(--light);
 }
 
+
+
 body {
   height: 100vh;
   background-color: var(--light-grey);
@@ -141,25 +143,27 @@ input[type="date"] {
   width: 100%;
   max-width: 228px;
   margin-top: 20px;
-  max-height: 386px;
+  height: 386px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 16px;
   border-radius: 8px;
-  flex: 1;
+
 }
 .price-section-inner {
   margin-top: 48px;
-  margin-right: 20px;
-  margin-left: 20px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+
 }
 .select-option {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  gap: 68px;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 select {
   color: var(--light);
@@ -312,3 +316,10 @@ select {
   align-items: center;
   justify-content: center;
 }
+/* @media (min-width:320px) and (max-width:480px)  {
+  body{
+    display: none;
+  
+  }
+
+} */
