@@ -273,7 +273,7 @@ function ThirdContainer() {
           <div className="user-inner1">
             <img src={UserImg} />
             <div className="user-inner-price">
-              <h4>Randy Westervelt</h4>
+              <h4>Randy Westervelt </h4>
               <p>$15025.10</p>
             </div>
           </div>
