@@ -359,6 +359,9 @@ function MainContainer() {
 function MainContent() {
   return (
     <div className="main-content">
+   
+
+    
       <TopContainer />
       <MainContainer />
     </div>
@@ -370,6 +373,9 @@ function App() {
     <>
       <SideBar />
       <MainContent />
+      <div className="mobile-warning">
+        <p>The developer didn't design the mobile view.</p>
+    </div>
     </>
   );
 }

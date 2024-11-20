@@ -11,6 +11,7 @@
 * {
   padding: 0;
   margin: 0;
+  
 }
 .padding-left-8px {
   padding-left: 8px;
@@ -42,6 +43,7 @@
 body {
   height: 100vh;
   background-color: var(--light-grey);
+  
 }
 
 a {
@@ -316,10 +318,38 @@ select {
   align-items: center;
   justify-content: center;
 }
-/* @media (min-width:320px) and (max-width:480px)  {
-  body{
-    display: none;
+
+.mobile-warning{
+
+  display: none;
   
+}
+@media (min-width:320px) and (max-width:768px)  {
+
+
+
+  body {
+    background-color: black;
+    color: white;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+ 
+.side-bar{
+  display: none;
+}
+  .main-content{
+    display: none;
+  }
+  .mobile-warning{
+    display: block;
+    text-align: center;
+    font-size: 4rem;
+    line-height: 1.5;
+    
   }
 
-} */
+}
