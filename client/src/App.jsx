@@ -1,3 +1,6 @@
+import { useState } from "react";
+
+
 import logo from "./assets/logo.svg";
 
 import dashboardIcon from "./assets/sidebar/sidebar_dashboard_icon.svg";
@@ -337,9 +340,66 @@ function MainContent() {
   );
 }
 
+function TopOfPage() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = async (e) => {
+
+
+
+    e.preventDefault();
+
+    console.log("form submitted");
+
+    const url = `http://localhost:5050/users/login?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`;
+
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+      });
+
+
+
+      if (response.ok) {
+        const data = await response.json();
+
+        console.log("Login successful:", data);
+      } else {
+        console.error("Login failed:", response.statusText);
+      }
+    } catch (error) {
+      console.error("An error occurred:", error);
+  
+    }
+  };
+
+  return (
+    <div className="top-of-page">
+      <form onSubmit={handleSubmit}>
+        <input
+          placeholder="username"
+          type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <input
+          placeholder="password"
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  );
+}
+
+
 function App() {
   return (
     <>
+     <TopOfPage/>
       <SideBar />
       <MainContent />
     </>

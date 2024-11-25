@@ -21,8 +21,9 @@ router.get("/:id", async (req, res) => {
   else res.send(result).status(200);
 });
 
-router.post("/", async (req, res) => {
 
+
+router.post("/addNewUser", async (req, res) => {
   try {
     let newUserDocument = {
       first_name: req.query.first_name,
@@ -34,13 +35,66 @@ router.post("/", async (req, res) => {
     };
 
     let collection = await db.collection("users");
-    let result = await collection.insertOne(newUserDocument);
-    res.send(result).status(204);
-  } catch (err) {
-    console.error(err);
+
+    let emailQuery = { email: req.query.email };
+
+    let emailQueryResult = await collection.findOne(emailQuery);
+
+    let usernameQuery = { username: req.query.username };
+
+    let usernameQueryResult = await collection.findOne(usernameQuery);
+
+    // console.log(emailQueryResult);
+    // console.log(usernameQueryResult);
+
+    if (emailQueryResult != null && usernameQueryResult != null) {
+      res
+        .status(400)
+        .send("User with email or username already exists already exists");
+    } else {
+      let result = await collection.insertOne(newUserDocument);
+      res.send(result).status(204);
+    }
+  } catch (error) {
+    console.log(error);
     res.status(500).send("Error adding user");
   }
 });
+
+
+router.post("/login", async (req, res) => {
+  try {
+
+    let loginDocument =  {
+      username: req.query.username,
+      password: req.query.password,
+    }
+
+    let collection = await db.collection("users");
+
+    let usernameQueryResult  = await collection.findOne({username: req.query.username});
+
+    if (usernameQueryResult != null) {
+      if (loginDocument.password === usernameQueryResult.password) {
+        res.send(usernameQueryResult).status(204);
+      }else {
+        res
+        .status(500)
+        .send("Incorrect password");
+      }
+    }else {
+      res
+      .status(500)
+      .send(`User with the username ${loginDocument.username} does not exist`);
+    }
+
+  }catch(error) {
+    console.log(error);
+    res.status(500).send ("Error Logging in, Please try again");
+  }
+})
+
+
 
 router.patch("/:id", async (req, res) => {
   try {
